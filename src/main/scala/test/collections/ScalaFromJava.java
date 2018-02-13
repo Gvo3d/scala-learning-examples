@@ -1,4 +1,4 @@
-package test;
+package test.collections;
 
 public class ScalaFromJava {
     public static void main(String[] args) {

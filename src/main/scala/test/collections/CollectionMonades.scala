@@ -1,4 +1,4 @@
-package test
+package test.collections
 
 object CollectionMonades {
   def main(args: Array[String]): Unit = {
@@ -6,7 +6,7 @@ object CollectionMonades {
     println("Simple")
     simpleMonadaExample(list).foreach(x => println(x))
     println("\nStream")
-    streamMonadaExample(list).foreach(x=>println(x))
+    listLn(streamMonadaExample(list))
   }
 
   def simpleMonadaExample(list: List[Int]): List[Int] = {
@@ -15,5 +15,9 @@ object CollectionMonades {
 
   def streamMonadaExample(list: List[Int]): List[Int] = {
     list.view.map(_ * 2).map(_ + 1).filter(_ % 3 != 0).toList
+  }
+
+  def listLn(list: List[Int]) = {
+    list.foreach(x => println(x))
   }
 }
